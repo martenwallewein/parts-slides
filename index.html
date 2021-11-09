@@ -295,7 +295,7 @@
                 <li>Startup: Increase bandwidth until packet loss occurs</li>
                 <li>Drain: Decrease bandwidth to free full buffers on the path</li>
                 <li>Probe-BW: Increase bandwidth and test for packet loss</li>
-                <li>Probe-RTT: Not used at the moment</li>
+                <li>Probe-RTT: Tbd</li>
             </ul>
         </ul>
         <div class="img-container">
@@ -330,7 +330,7 @@
         <h1>Current State: RTS</h1>
         <ul>
             <li>Complete transfer of parts is implemented</li>
-            <li>Congestion control, transfer of partSize < MTU and others need to be optimized</li>
+            <li>Congestion control, transfer of partSize < MTU and other things need to be optimized</li>
             <li>And: it's actually not really path-aware</li>
             <ul>
                 <li>Always uses the first available path for all connections - therefor RTS</li>
@@ -345,9 +345,13 @@
 
     <div class="step slide" data-rel-x="2200" data-rel-y="0">
         <h1>First benchmark on 10G link</h1>
+        <div class="img-container">
+            <img src="images/parts-chart.png" 
+            alt="SCION BT setup" class="fullscreen-img" style="width: 50%"/>
+        </div>
         <ul>
-            <li>Intra-AS transfer, without border router</li>
-            <li>PartSize is 5GB / numConns, so really huge</li>
+            <li>Perfect PARTS setup: Intra-AS transfer, huge partSize</li>
+            <li>In some runs with numConns=4 transfer corrupts somewhere...</li>
         </ul>
         <div class="notes">
         </div>
